@@ -52,8 +52,6 @@
             text-align: center;
             position: relative;
             z-index: 1;
-            overflow: hidden;
-            /* Ensure the container keeps its content visible */
         }
 
         .container h1 {
@@ -135,10 +133,6 @@
         .logo-container img {
             height: 70px;
             margin: 0 20px;
-            max-width: 100%;
-            /* Ensure the image doesn't overflow */
-            object-fit: contain;
-            /* Scale the image to fit properly */
         }
 
         /* Mobile responsive styles */
@@ -152,27 +146,47 @@
 
             .logo-container {
                 margin-top: 50px;
+                /* padding-top: 200px; */
             }
 
             /* Adjust iframe height for smaller screens */
             iframe {
                 height: 800px;
             }
+
         }
 
-        /* Ensure logos stay visible on mobile when iframe is shown */
-        @media only screen and (max-width: 768px) {
+        /* Tablet screen styles */
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+            /* Container adjustments for tablet screens */
             .container {
-                padding-bottom: 0;
-                /* Ensure no extra padding pushes content */
+                width: 90%;
+                padding-top: 50px;
             }
 
-            /* Keep logos smaller and centered on mobile screens */
-            .logo-container img {
-                height: 50px;
-                /* Scale down logos on smaller screens */
-                margin: 0 10px;
+            /* Adjust iframe height for tablet screens */
+            iframe {
+                height: 800px;
             }
+
+        }
+
+        /* Extra small screen styles */
+        @media only screen and (max-width: 480px) {
+
+            /* Container adjustments for extra small screens */
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+
+            /* Adjust iframe height for extra small screens */
+            iframe {
+                height: 600px;
+            }
+
+
         }
     </style>
 </head>
